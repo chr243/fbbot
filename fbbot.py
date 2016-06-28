@@ -2,9 +2,14 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
 
-
 # You need to have selenium and phantomjs installed
 # All that time.sleeps are just to fool fb
+
+fantom = 'path/to/phantomjs.exe'
+
+
+driver = webdriver.PhantomJS(fantom, service_args=['--load-images=no'])
+driver.set_window_size(1024, 768)
 
 def fblogin(email, password):
     driver.get("https://facebook.com")
